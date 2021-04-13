@@ -1,3 +1,11 @@
+package api
+
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
+
 func SetupTransactionAPI(router *gin.Engine) {
 	transactionAPI := router.Group("api/v2")
 	{
