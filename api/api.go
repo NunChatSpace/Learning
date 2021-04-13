@@ -1,10 +1,16 @@
 package api
 
-import "github.com/gin-gonic/gin"
+import (
+	"main/db"
 
+	"github.com/gin-gonic/gin"
+)
+
+// Setup - Grouping request and setup db
 func Setup(router *gin.Engine) {
-	// db.SetupDB()
+	db.SetupDB()
+
 	SetupAuthenAPI(router)
-	// SetupProductAPI(router)
+	SetupProductAPI(router)
 	SetupTransactionAPI(router)
 }
