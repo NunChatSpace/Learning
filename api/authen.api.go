@@ -1,8 +1,10 @@
 package api
 
 import (
+	"main/Interceptor"
 	"main/db"
 	"main/model"
+	"net/http"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -27,7 +29,13 @@ func login(c *gin.Context) {
 		} else if !checkPasswordHash(user.Password, quriedUser.Password) {
 			c.JSON(200, gin.H{"result": "NG", "error": "Invalid password"})
 		} else {
-			c.JSON(200, gin.H{"result": "OK", "data": user})
+			token, err := Interceptor.JwtSign(quriedUser)
+			if err != nil {
+				c.JSON(http.StatusUnauthorized, gin.H{"result": "NG", "error": err})
+			} else {
+				c.JSON(200, gin.H{"result": "OK", "token": token})
+			}
+
 		}
 	} else {
 		c.JSON(401, gin.H{"result": "You fucked up"})

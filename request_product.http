@@ -5,7 +5,7 @@ GET http://localhost:8081/api/v2/product HTTP/1.1
 
 ### Get Product with Token
 GET http://localhost:8081/api/v2/product HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDA2NTI5NTYsImlkIjoyLCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiYWRtaW4ifQ.DtJmRRhTmcGHjWiwoMjnuppEZFj-hFUT-UF8Bk_3lSI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTgzODg5NjcsImlkIjoxLCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiYWRtaW4ifQ.jEYkG70nnZIEd1GhBmIx2nloBj_ii9FkAJkK1nfylOo
 
 ### Get Product with keyword
 GET http://localhost:8081/api/v2/product?keyword=Ar HTTP/1.1
